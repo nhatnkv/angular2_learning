@@ -7,13 +7,13 @@ import { PeopleService} from '../services/people.service';
   templateUrl: './people-list.component.html',
   styleUrls: ['./people-list.component.scss'],
 })
-export class PeopleListComponent implements OnInit {
+export class PeopleListComponent implements OnInit{
   people: Person[] = [];
+  selectedPerson: Person;
 
-  constructor(private _peopleService: PeopleService) { }
+  constructor(private _peopleService : PeopleService){ }
 
-  ngOnInit() {
+  ngOnInit(){
     this.people = this._peopleService.getAll();
   }
-
 }
